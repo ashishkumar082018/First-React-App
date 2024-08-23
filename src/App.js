@@ -2,6 +2,10 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    console.log(enteredExpenseData);
+  };
+
   const expenses = [
     { id: 1, title: "Insurance", date: new Date(2023, 7, 15), price: 100 },
     { id: 2, title: "Book", date: new Date(2023, 8, 25), price: 10 },
@@ -11,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={saveExpenseDataHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
